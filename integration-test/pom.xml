@@ -13,7 +13,7 @@
    <parent>
       <groupId>io.github.ruedigerk.contractfirst.generator</groupId>
       <artifactId>contractfirst-generator-parent</artifactId>
-      <version>DRYRUN4</version>
+      <version>1.6.1-SNAPSHOT</version>
    </parent>
 
    <properties>
