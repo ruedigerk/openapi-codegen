@@ -4,7 +4,7 @@
 
    <groupId>io.github.ruedigerk.contractfirst.generator</groupId>
    <artifactId>contractfirst-generator-parent</artifactId>
-   <version>1.6.1-SNAPSHOT</version>
+   <version>DRYRUN5</version>
    <packaging>pom</packaging>
 
    <name>Contractfirst-Generator</name>
@@ -30,7 +30,7 @@
       <connection>scm:git:https://github.com/ruedigerk/contractfirst-generator.git</connection>
       <developerConnection>scm:git:https://github.com/ruedigerk/contractfirst-generator.git</developerConnection>
       <url>https://github.com/ruedigerk/contractfirst-generator</url>
-      <tag>HEAD</tag>
+      <tag>contractfirst-generator-parent-DRYRUN5</tag>
    </scm>
 
    <distributionManagement>
