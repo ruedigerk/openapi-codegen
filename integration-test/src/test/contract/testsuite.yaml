@@ -435,6 +435,13 @@ paths:
       tags:
         - MultipartRequestBody
       operationId: multipartRequestBody
+      parameters:
+        - name: testSelector
+          in: query
+          description: Selects the assertions to perform on the server.
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
