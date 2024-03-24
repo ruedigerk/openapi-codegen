@@ -7,20 +7,6 @@ import spock.lang.Unroll
 class MediaTypesTest extends Specification {
 
   @Unroll
-  def "parseNullable #contentType"() {
-    expect:
-    MediaTypes.parseNullable(contentType) == expected
-
-    where:
-    contentType                       | expected
-    "application/json"                | MediaType.get("application/json")
-    "application/json; charset=UTF-8" | MediaType.get("application/json; charset=UTF-8")
-    "text/plain"                      | MediaType.get("text/plain")
-    "nonsense"                        | null
-    null                              | null
-  }
-
-  @Unroll
   def "isJsonMediaType (String) #contentType"() {
     when:
     def result = MediaTypes.isJsonMediaType((String) contentType)

@@ -15,10 +15,13 @@
    </properties>
 
    <build>
+      <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
+      
       <plugins>
          <plugin>
-            <!-- Compile Java sources -->
-            <artifactId>maven-compiler-plugin</artifactId>
+            <!-- Kotlin compiler plugin needs to run before Java compiler plugin -->
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-maven-plugin</artifactId>
          </plugin>
 
          <plugin>
@@ -56,16 +59,36 @@
          <version>${project.version}</version>
       </dependency>
       <dependency>
+         <!-- Kotlin standard library for JDK 8+ -->
+         <groupId>org.jetbrains.kotlin</groupId>
+         <artifactId>kotlin-stdlib</artifactId>
+         <version>${kotlin.version}</version>
+      </dependency>
+      <dependency>
          <!-- HTTP client -->
          <groupId>com.squareup.okhttp3</groupId>
          <artifactId>okhttp</artifactId>
          <version>${okhttp.version}</version>
+         <exclusions>
+            <!-- Exclude transitive Kotlin dependencies -->
+            <exclusion>
+               <artifactId>*</artifactId>
+               <groupId>org.jetbrains.kotlin</groupId>
+            </exclusion>
+         </exclusions>
       </dependency>
       <dependency>
          <!-- Logging Requests -->
          <groupId>com.squareup.okhttp3</groupId>
          <artifactId>logging-interceptor</artifactId>
          <version>${okhttp.version}</version>
+         <exclusions>
+            <!-- Exclude transitive Kotlin dependencies -->
+            <exclusion>
+               <artifactId>*</artifactId>
+               <groupId>org.jetbrains.kotlin</groupId>
+            </exclusion>
+         </exclusions>
       </dependency>
       <dependency>
          <!-- JSON serializer -->

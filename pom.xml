@@ -52,7 +52,7 @@
       <!-- Language versions -->
       <target-jdk.release>8</target-jdk.release>
       <target-jdk.version>1.8</target-jdk.version>
-      <kotlin.version>1.9.22</kotlin.version>
+      <kotlin.version>1.9.23</kotlin.version>
       <groovy.version>3.0.20</groovy.version>
 
       <!-- Maven project plugin versions -->
@@ -112,11 +112,6 @@
                      <goals>
                         <goal>compile</goal>
                      </goals>
-                     <configuration>
-                        <sourceDirs>
-                           <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
-                        </sourceDirs>
-                     </configuration>
                   </execution>
                </executions>
                <configuration>
@@ -129,7 +124,6 @@
             </plugin>
 
             <plugin>
-               <!-- Java compiler needs to run after Kotlin compiler, see https://kotlinlang.org/docs/maven.html#compile-kotlin-and-java-sources -->
                <artifactId>maven-compiler-plugin</artifactId>
                <version>${maven-compiler-plugin.version}</version>
                <configuration>
@@ -137,32 +131,6 @@
                   <target>${target-jdk.version}</target>
                   <release>${target-jdk.release}</release>
                </configuration>
-               <executions>
-                  <execution>
-                     <!-- Replacing default-compile as it is treated specially by maven -->
-                     <id>default-compile</id>
-                     <phase>none</phase>
-                  </execution>
-                  <execution>
-                     <!-- Replacing default-testCompile as it is treated specially by maven -->
-                     <id>default-testCompile</id>
-                     <phase>none</phase>
-                  </execution>
-                  <execution>
-                     <id>java-compile</id>
-                     <phase>compile</phase>
-                     <goals>
-                        <goal>compile</goal>
-                     </goals>
-                  </execution>
-                  <execution>
-                     <id>java-test-compile</id>
-                     <phase>test-compile</phase>
-                     <goals>
-                        <goal>testCompile</goal>
-                     </goals>
-                  </execution>
-               </executions>
             </plugin>
 
             <plugin>

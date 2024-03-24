@@ -11,8 +11,7 @@ import org.glassfish.jersey.media.multipart.FormDataParam
 import spock.lang.Subject
 
 import javax.ws.rs.*
-import javax.ws.rs.core.MediaType
-
+import javax.ws.rs.core.MediaType 
 /**
  * Tests serialization of form encoded request bodies.
  */

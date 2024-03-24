@@ -1,9 +1,9 @@
-package io.github.ruedigerk.contractfirst.generator.client.internal;
+package io.github.ruedigerk.contractfirst.generator.client.internal
 
 /**
  * Represents the possible locations a parameter of an API operation can have.
  */
-public enum ParameterLocation {
+enum class ParameterLocation {
 
   QUERY,
   HEADER,

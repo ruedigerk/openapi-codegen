@@ -17,11 +17,6 @@
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-maven-plugin</artifactId>
          </plugin>
-
-         <plugin>
-            <!-- Java compiler needs to run after Kotlin compiler, see https://kotlinlang.org/docs/maven.html#compile-kotlin-and-java-sources -->
-            <artifactId>maven-compiler-plugin</artifactId>
-         </plugin>
       </plugins>
    </build>
 
@@ -55,7 +50,7 @@
       <dependency>
          <!-- Kotlin standard library for JDK 8+ -->
          <groupId>org.jetbrains.kotlin</groupId>
-         <artifactId>kotlin-stdlib-jdk8</artifactId>
+         <artifactId>kotlin-stdlib</artifactId>
          <version>${kotlin.version}</version>
       </dependency>
       <dependency>
